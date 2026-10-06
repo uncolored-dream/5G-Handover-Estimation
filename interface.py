@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import project_app.config as config
 from project_app.utils import ThroughputPrediction
@@ -69,4 +70,4 @@ def predict_throughput():
         return jsonify({'Result': f'Predicted Throughput for the given input data is: {round(predicted_throughput, 2)} Kbps'})      
 
 if __name__ == "__main__":
-    app.run(host=config.HOST, port=config.PORT, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5004)))
