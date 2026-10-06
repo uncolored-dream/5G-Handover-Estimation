@@ -1,0 +1,1 @@
+print("5G Throughput Prediction Package Initialized".center(80, '*'))
